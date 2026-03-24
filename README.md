@@ -31,10 +31,10 @@ Minimal [Hyprland](https://hyprland.org/) configuration for Arch-based systems, 
 
 ## Philosophy
 
-- Keybinds are muscle-memory first — consistent modifiers, no conflicts
-- Window rules are explicit, not assumed
-- Animations are present but fast — feedback without friction
-- Dual-monitor aware throughout (DP-1, DP-2)
+- Both keybind & mouse focused workflow is supported
+- Gamemode script available for better performance on lower end hardware
+- All in one fuzzel configuration (application launcher, network menu, clipboard menu & power options menu)
+- Customized window layouts for each workspace
 
 ## Usage
 
