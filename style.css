@@ -1,0 +1,196 @@
+* {
+  min-height: 0;
+  min-width: 0;
+  font-family: "JetBrainsMono NFP";
+  font-size: 16px;
+  font-weight: 600;
+}
+
+window#waybar {
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  background-color: rgba(17, 17, 27, 0.80);
+}
+
+#custom-theme {
+  color: #89b4fa
+}
+
+#custom-launcher {
+  padding: 0.3rem 0.6rem;
+  margin: 0.4rem 0.25rem;
+  margin-right: 0.7rem;
+  border-radius: 6px;
+  background-color: #1e1e2e;
+  color: #89b4fa;
+}
+
+#workspaces button {
+  padding: 0.3rem 0.6rem;
+  margin: 0.4rem 0.25rem;
+  border-radius: 6px;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+#workspaces button:hover {
+  color: #cdd6f4;
+  background-color: #1e1e2e;
+}
+
+#workspaces button.active {
+  background-color: #1e1e2e;
+  color: #89b4fa;
+}
+
+#workspaces button.urgent {
+  background-color: #1e1e2e;
+  color: #f38ba8;
+}
+
+#clock,
+#pulseaudio,
+#custom-launcher,
+#custom-power,
+#custom-theme,
+#custom-spotify,
+#custom-notification,
+#custom-gamemode,
+#language,
+#custom-network,
+#custom-clipboard,
+#tray,
+#window,
+#mpris {
+  padding: 0.3rem 0.6rem;
+  margin: 0.4rem 0.25rem;
+  border-radius: 6px;
+  background-color: #1e1e2e;
+}
+
+#custom-clipboard {
+  color: #89b4fa;
+}
+
+#custom-network {
+  color: #89b4fa;
+}
+
+#custom-network.disconnected {
+    color: #f38ba8;
+}
+
+#mpris.playing {
+  color: #a6e3a1;
+}
+
+#mpris.paused {
+  color: #9399b2;
+}
+
+#custom-sep {
+  padding: 0px;
+  color: #585b70;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#language {
+  color: #f9e2af;
+}
+
+#clock {
+  color: #74c7ec;
+}
+
+#clock.simpleclock {
+  color: #89b4fa;
+}
+
+#window {
+  color: #cdd6f4;
+}
+
+#pulseaudio {
+  color: #b4befe;
+}
+
+#pulseaudio.muted {
+  color: #a6adc8;
+}
+
+#custom-launcher {
+  color: #89b4fa;
+}
+
+#custom-power {
+  color: #f38ba8;
+}
+
+tooltip {
+  background-color: #181825;
+  border: 2px solid #89b4fa;
+}
+
+
+#custom-gamemode.gamemode-on {
+  color: #89B4FA;
+}
+
+#custom-gamemode.gamemode-off {
+  color: #9399b2;
+}
+
+menu, menu * {
+  font-family: Lexend, "JetBrainsMono NFP";
+}
+
+menu {
+  background-color: #1a1b26;
+  color: #c0caf5;
+  border: 2px solid #3b4261;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+menuitem {
+  background-color: transparent;
+  color: #c0caf5;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+menuitem:hover {
+  background-color: #24283b;
+  color: #c0caf5;
+}
+
+separator {
+  background-color: #3b4261;
+  min-height: 1px;
+  margin: 6px 4px;
+}
+
+#workspaces button.special {
+    color: #f9e2af;
+}
+
+#workspaces button.special.empty {
+    color: #cdd6f4;
+}
+
+#workspaces button.special.active {
+    color: #f9e2af;
+    background-color: #1e1e2e;
+}
+
+#workspaces button.special:hover {
+  color: #f9e2af;
+  background-color: #1e1e2e;
+}
+
+@import url("gamemode.css");
+
+

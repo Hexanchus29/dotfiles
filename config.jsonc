@@ -1,0 +1,154 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "height": 40,
+  "spacing": 2,
+  "exclusive": true,
+  "gtk-layer-shell": true,
+  "passthrough": false,
+  "fixed-center": true,
+  "modules-left": ["custom/launcher", "hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["mpris"],
+  "modules-right": [
+    "hyprland/language",
+    "custom/gamemode",
+    "pulseaudio",
+    "clock",
+    "clock#simpleclock",
+    "custom/network",
+    "custom/clipboard",
+    "tray",
+    "custom/notification",
+    "custom/power",
+  ],
+
+"custom/clipboard": {
+    "format": "󰅇",
+    "tooltip": false,
+    "on-click": "~/.local/bin/toggle-clipboard"
+},
+
+"custom/network": {
+    "exec": "~/.local/bin/network-icon.sh",
+    "return-type": "json",
+    "interval": 5,
+    "tooltip": false,
+    "on-click": "~/.local/bin/fuzzel-network"
+},
+
+"custom/gamemode": {
+  "format": "{}",
+  "return-type": "json",
+  "interval": 2,
+  "signal": 8,
+  "exec": "~/.local/bin/gamemode-status",
+  "on-click": "~/.local/bin/gamemode-toggle; pkill -RTMIN+8 waybar"
+},
+
+  "custom/spotify": {
+    "format": "  {}",
+    "return-type": "json",
+    "on-click": "playerctl -p spotify play-pause",
+    "on-click-right": "spotifatius toggle-liked",
+    "on-click-middle": "playerctl -p spotify next",
+    "exec": "spotifatius monitor",
+  },
+
+  "mpris": {
+    "player": "spotify",
+    "dynamic-order": ["artist", "title"],
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "status-icons": {
+      "paused": "",
+    },
+    "player-icons": {
+      "default": "",
+    },
+      "on-scroll-up": "playerctl -p spotify volume 0.05+ && ~/.local/bin/spotify-vol.sh up",
+      "on-scroll-down": "playerctl -p spotify volume 0.05- && ~/.local/bin/spotify-vol.sh down"
+  },
+  
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "show-special": true,
+    "all-outputs": false,
+    "disable-scroll": false,
+    "active-only": false,
+    "persistent-workspaces": {
+      "DP-1": [1, 2, 3, 4, 5, 6, "special:scratch"],
+      "DP-2": [1, 2, 3, 4, 5, 6, "special:scratch"]
+    },
+
+"format-icons": {
+    "special": "",  
+    "default": "●",
+    "visible": "●",
+    "empty": "●",
+    "urgent": "◆"
+      }
+  },
+  
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 50,
+    "on-click-middle": "hyprctl dispatch killactive"
+  },
+  
+  "hyprland/language": {
+    "format": "{short}",
+    "tooltip": false,
+    "keyboard-name": "razer-razer-blackwidow-v3-tenkeyless",
+    "on-click": "hyprctl switchxkblayout \"razer-razer-blackwidow-v3-tenkeyless\" next"
+  },
+  
+  "tray": {
+    "show-passive-items": true,
+    "spacing": 10,
+  },
+  
+  "clock#simpleclock": {
+    "tooltip": false,
+    "format": " {:%H:%M}",
+  },
+  
+  "clock": {
+    "format": " {:L%a %d %b}",
+    "calendar": {
+      "format": {
+        "days": "<span weight='normal'>{}</span>",
+        "months": "<span color='#cdd6f4'><b>{}</b></span>",
+        "today": "<span color='#f38ba8' weight='700'><u>{}</u></span>",
+        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+        "weeks": "<span color='#a6e3a1'><b>W{}</b></span>",
+      },
+      "mode": "month",
+      "mode-mon-col": 1,
+      "on-scroll": 1,
+    },
+    "tooltip-format": "<span color='#cdd6f4' font='Lexend 16'><tt><small>{calendar}</small></tt></span>",
+  },
+  
+  "pulseaudio": {
+    "format": "{icon}{volume}%",
+    "format-muted": "  muted",
+    "format-icons": {
+      "headphone": "",
+      "default": [" ", " ", " "],
+    },
+    "on-click": "pwvucontrol",
+  },
+  
+  "custom/power": {
+    "tooltip": false,
+    "on-click": ".local/bin/powermenu",
+    "format": "⏻",
+  },
+
+  "custom/launcher": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "fuzzel"
+  }
+}
